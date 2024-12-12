@@ -229,9 +229,7 @@ HideCursor;
 %% Clut
 
 %set GPU CLUTs to linear
-if p.USE_PROJECTOR
-    Screen('LoadNormalizedGammaTable', s.win, linspace(0,1,256)'*[1,1,1]);
-end
+Screen('LoadNormalizedGammaTable', s.win, linspace(0,1,256)'*[1,1,1]);
 
 %% Make Image Textures
 
