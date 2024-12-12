@@ -9,7 +9,9 @@ img_height = 1080;
 
 for eye = ["l" "r"]
     for distance = [51 64 80]
-        name = sprintf("Fixation_D%02d_%s.png", distance, eye);
+        %name = sprintf("Fixation_D%02d_%s.png", distance, eye);
+        name = sprintf("fixation.png");
+
         fix = imread(fol_fixation + name);
         fgd = repmat(any(fix <= threshold,3),[1 1 3]);
 
