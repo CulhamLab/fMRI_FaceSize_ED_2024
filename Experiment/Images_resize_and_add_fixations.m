@@ -12,11 +12,13 @@ for eye = ["l" "r"]
         %name = sprintf("Fixation_D%02d_%s.png", distance, eye);
         name = sprintf("fixation.png");
 
-        fix = imread(fol_fixation + name);
-        fgd = repmat(any(fix <= threshold,3),[1 1 3]);
+        [fix,~,alpha] = imread(fol_fixation + name);
+        fgd = repmat(alpha > 200, [1 1 3]);
 
         % resize
-        fix_rs = imresize(fix, [img_height img_width]);
+        fix_rs = fix;
+        fix_rs(~fgd) = 255; %white background
+        fix_rs = imresize(fix_rs, [img_height img_width]);
         
         % save
         imwrite(fix_rs, fol + name);
