@@ -7,8 +7,8 @@ fol_without_fixation = fol + "Stims_Without_Fixation\";
 if ~exist(fol_without_fixation, "dir"), mkdir(fol_without_fixation); end
 
 %%
-img_width = 1920;
-img_height = 1080;
+img_width = 1920 * 2;
+img_height = 1080 * 2;
 
 font_size = 30;
 font_colour = [1 1 1];
