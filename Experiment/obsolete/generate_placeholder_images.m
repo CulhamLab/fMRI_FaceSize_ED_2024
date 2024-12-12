@@ -10,7 +10,7 @@ if ~exist(fol_without_fixation, "dir"), mkdir(fol_without_fixation); end
 img_width = 1920 * 2;
 img_height = 1080 * 2;
 
-font_size = 30;
+font_size = 60;
 font_colour = [1 1 1];
 colour_left = [0 0 1];
 colour_right = [1 0 0];
@@ -36,9 +36,9 @@ for eye = ["l" "r"]
         img = ones(img_height,img_width,3,"uint8") * 128;
         switch eye
             case "l"
-                img = insertText(img, [(0.1 * img_width) y], "Ball " + distance, FontSize=fsz, TextBoxColor=colour_left, FontColor=font_colour);
+                img = insertText(img, [(0.1 * img_width) y], "Ball " + distance, FontSize=font_size, TextBoxColor=colour_left, FontColor=font_colour);
             case "r"
-                img = insertText(img, [(0.7 * img_width) y], "Ball " + distance, FontSize=fsz, TextBoxColor=colour_right, FontColor=font_colour);
+                img = insertText(img, [(0.7 * img_width) y], "Ball " + distance, FontSize=font_size, TextBoxColor=colour_right, FontColor=font_colour);
         end
         imwrite(img, fol_without_fixation + sprintf("Ball_D%02d_%s.png", distance, eye));
 
