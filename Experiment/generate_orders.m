@@ -1,4 +1,10 @@
-% Notes:
+% Note that these orders are balanced across runs, but not across participants
+% There is no need to use a specific number/increment of participant orders.
+
+% Rerunning this script for the same participant(s) will result in indentical
+% orders. Comment out "rng(par)" to instead make pseudorandom orders.
+
+% Overview (for more detail, search for "RULE")
 % -6 runs
 % -each run contains 12 blocks: 3 dist x 4 rep
 % -the 4 reps are divided into 2 in each half of the run
