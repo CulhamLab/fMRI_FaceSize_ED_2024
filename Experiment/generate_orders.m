@@ -35,7 +35,7 @@ clear all
 
 %% Which orders to make?
 
-participant_orders_to_make = 1; %1:30;
+participant_orders_to_make = 1:30;
 
 
 %% Stims
