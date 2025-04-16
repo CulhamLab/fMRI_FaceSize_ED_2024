@@ -69,6 +69,7 @@ durations.baseline_initial = 20;
 durations.baseline_vergence_change = 20;
 durations.stim = 1;
 durations.ITI = 3;
+durations.ITI_6th_trial = 6;
 durations.baseline_final = 20;
 
 
@@ -668,20 +669,23 @@ for block = 1:12
         tbl.ConditionID(row) = condID;
 
         % ITI (-3)...
-        if trial < 6
-            row = row + 1;
-            tbl.Trial(row) = 0;
-            tbl.Condition(row) = "NULL_ITI";
-            tbl.Duration_Seconds(row) = durations.ITI;
-            tbl.Filename_Left(row) = stims.image_prefix_ITI + "_" + distance + "_" + stims.image_suffix_left_eye + stims.image_filetype;
-            tbl.Filename_Right(row) = stims.image_prefix_ITI + "_" + distance + "_" + stims.image_suffix_right_eye + stims.image_filetype;
-            tbl.Is_Repeat(row) = false;
-            tbl.Block(row) = block;
-            tbl.Distance(row) = distance;
-            tbl.Face(row) = "NULL";
-            tbl.Size(row) = "NULL";
-            tbl.ConditionID(row) = -3;
+        if trial == 6
+            ITI_dur = durations.ITI_6th_trial;
+        else
+            ITI_dur = durations.ITI;
         end
+        row = row + 1;
+        tbl.Trial(row) = 0;
+        tbl.Condition(row) = "NULL_ITI";
+        tbl.Duration_Seconds(row) = ITI_dur;
+        tbl.Filename_Left(row) = stims.image_prefix_ITI + "_" + distance + "_" + stims.image_suffix_left_eye + stims.image_filetype;
+        tbl.Filename_Right(row) = stims.image_prefix_ITI + "_" + distance + "_" + stims.image_suffix_right_eye + stims.image_filetype;
+        tbl.Is_Repeat(row) = false;
+        tbl.Block(row) = block;
+        tbl.Distance(row) = distance;
+        tbl.Face(row) = "NULL";
+        tbl.Size(row) = "NULL";
+        tbl.ConditionID(row) = -3;
     end
 end
 
