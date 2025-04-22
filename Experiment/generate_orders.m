@@ -69,7 +69,7 @@ durations.baseline_initial = 20;
 durations.baseline_vergence_change = 20;
 durations.stim = 1;
 durations.ITI = 3;
-durations.ITI_6th_trial = 6;
+durations.ITI_6th_trial = 8;
 durations.baseline_final = 20;
 
 
