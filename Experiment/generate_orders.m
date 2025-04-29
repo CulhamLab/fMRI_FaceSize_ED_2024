@@ -43,13 +43,13 @@ participant_orders_to_make = 1:30;
 stims.faces = arrayfun(@(x) sprintf("Face%02d", x), 1:18);
 stims.faces_count = length(stims.faces);
 
-stims.sizes = arrayfun(@(x) sprintf("S%02d", x), [20 25 30]);
+stims.sizes = arrayfun(@(x) sprintf("S%02d", x), [20 25 31]);
 stims.sizes_count = length(stims.sizes);
 
-stims.distances = arrayfun(@(x) sprintf("D%02d", x), [51 64 80]);
+stims.distances = arrayfun(@(x) sprintf("D%02d", x), [55 69 86]);
 stims.distances_count = length(stims.distances);
 
-stims.baseline_distance = "D64";
+stims.baseline_distance = "D69";
 
 stims.image_prefix_baseline = "Fixation";
 stims.image_prefix_vergence_change = "Fixation";
